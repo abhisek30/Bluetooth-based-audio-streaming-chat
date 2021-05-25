@@ -39,4 +39,29 @@
         android:name="co.kit.gfg.chatapp.RateUsFragment"
         android:label="@string/rate_us"
         tools:layout="@layout/fragment_rate_us" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="co.kit.gfg.chatapp.ChatFragment"
+        android:label="Lets Chat"
+        tools:layout="@layout/fragment_chat2" />
+    <fragment
+        android:id="@+id/audioFragment"
+        android:name="co.kit.gfg.chatapp.AudioFragment"
+        android:label="Listen Audio"
+        tools:layout="@layout/fragment_audio" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="co.kit.gfg.chatapp.SearchFragment"
+        android:label="Search Connections"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/streamFragment"
+        android:name="co.kit.gfg.chatapp.StreamFragment"
+        android:label="Stream Audio"
+        tools:layout="@layout/fragment_stream" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="co.kit.gfg.chatapp.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile"/>
 </navigation>
