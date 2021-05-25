@@ -12,6 +12,9 @@ import android.view.Gravity;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+public class MainActivity extends AppCompatActivity {
 
 public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
@@ -35,5 +38,12 @@ public class MainActivity extends AppCompatActivity {
         NavController navController;
         navController = Navigation.findNavController(this,R.id.navHostFragment);
         NavigationUI.setupWithNavController(navigationView, navController);
+        /* Initialize the Bottom Navigation View */
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+
+        /* Nav controller */
+        NavController navController = Navigation.findNavController(this,  R.id.fragment);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 }
