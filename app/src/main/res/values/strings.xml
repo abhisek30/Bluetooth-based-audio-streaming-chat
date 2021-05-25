@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Bluethooth-based-audio-streaming-and-chating-app</string>
+    <string name="home">Home</string>
+    <string name="developers">Developers</string>
+    <string name="about_us">About Us</string>
+    <string name="settings">Settings</string>
+    <string name="feedback">Feedback</string>
+    <string name="rate_us">Rate Us</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hints">Hints</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="chat_fragment">Chat Fragment</string>
+    <string name="audio_fragment">Audio Fragment</string>
+    <string name="chat_navigation">Chat Navigation</string>
+    <string name="personal_profile">Personal Profile</string>
+    <string name="search">Search</string>
+    <string name="stream_fragment">Stream Fragment</string>
+    <string name="chat">Chat</string>
+    <string name="audio">Audio</string>
+    <string name="stream">Stream</string>
+    <string name="profile">Profile</string>
+    <string name="user_name">User Name</string>
+    <string name="user_id">User ID</string>
+    <string name="connection_status">Connection status</string>
+
+</resources>

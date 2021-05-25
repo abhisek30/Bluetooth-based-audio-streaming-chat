@@ -1,37 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.kit.gfg.chatapp">
-    <!-- Permissions Required for accessing Bluetooth services -->
 
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Bluethoothbasedaudiostreamingandchatingapp">
+        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-
-    <application android:theme="@style/AppTheme" android:supportsRtl="true" android:roundIcon="@mipmap/ic_launcher_round" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true">
-
-    <activity android:name=".abc"/>
-
-    <activity android:name=".RegisterActivity"/>
-
-
-    <activity android:name=".LoginActivity">
-
-
-    <intent-filter>
-
-    <action android:name="android.intent.action.MAIN"/>
-
-    <category android:name="android.intent.category.LAUNCHER"/>
-
-</intent-filter>
-
-</activity>
-
-</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>
