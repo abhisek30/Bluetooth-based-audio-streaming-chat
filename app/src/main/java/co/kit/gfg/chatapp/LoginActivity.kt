@@ -3,13 +3,9 @@ package co.kit.gfg.chatapp
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-import co.kit.gfg.chatapp.R
-import co.kit.gfg.chatapp.RegisterActivity
-import co.kit.gfg.chatapp.abc
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -38,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
             if(handler.userPresent(log_bluetooth_name.text.toString(),log_username.text.toString(),log_password.text.toString()))
             {
                 //start the activity
-                val intent=Intent(this, abc::class.java)
+                val intent=Intent(this, MainActivity::class.java)
                 startActivity(intent)
 
             }
