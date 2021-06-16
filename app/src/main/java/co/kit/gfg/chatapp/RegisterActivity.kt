@@ -7,12 +7,13 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
-    lateinit var handler: DatabaseHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        handler= DatabaseHelper(this)
+//        handler= DatabaseHelper(this)
+            val handler= DatabaseHelper(this)
+
 
 
         btnLogRegister.setOnClickListener {
