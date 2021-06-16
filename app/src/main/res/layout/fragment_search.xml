@@ -5,16 +5,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchFragment">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/search"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    tools:context=".SearchFragment"
+ android:layout_marginBottom="57dp">
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="174dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/background_search5"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_info"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/paired_button"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/minacti_background"
+            android:layout_marginTop="10dp">
+            <TextView
+
+            android:id="@+id/paired_button1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+
+            android:background="@null"
+            android:text="  PAIRED"
+                android:gravity="center"
+            android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/bluetooth_animation"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:lottie_rawRes="@raw/bluetoothanimation2"
+            app:layout_constraintStart_toEndOf="@id/paired_button1"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/profile_searching_animation"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toEndOf="@id/paired_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/searching_profile_animation" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scanning_button"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toEndOf="@id/profile_searching_animation"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/minacti_background"
+            android:layout_marginTop="10dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/scanning_animation"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                app:lottie_autoPlay="true"
+
+                android:layout_marginLeft="15dp"
+                app:lottie_loop="true"
+                android:layout_marginTop="10dp"
+                app:lottie_rawRes="@raw/magnifying_animation3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+
+                android:id="@+id/scanning_button1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+
+                android:background="@null"
+                android:text="SCAN"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_marginRight="10dp"
+
+
+                app:layout_constraintStart_toEndOf="@id/scanning_animation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_devices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/constraint_layout_info"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
