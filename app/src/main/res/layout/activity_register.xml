@@ -4,20 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".RegisterActivity">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_login_animation"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
 
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:lottie_rawRes="@raw/face_animation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+
+     />
     <TextView
-    android:id="@+id/textView2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:text="Database Register"
-    android:textColor="@color/colorPrimary"
-    android:textSize="38sp"
-    android:textStyle="bold"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Registration"
+        android:textColor="@color/colorPrimary"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lottie_login_animation"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view"/>
+   <com.airbnb.lottie.LottieAnimationView
+       android:layout_width="match_parent"
+       android:layout_height="140dp"
+       app:lottie_rawRes="@raw/background_waves4"
+       app:lottie_autoPlay="true"
+       app:lottie_loop="true"
+       android:scaleX="2"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"/>
+
+
 
     <View
         android:id="@+id/view"
@@ -29,6 +54,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
+        android:id="@+id/a"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -91,11 +117,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/reg_bluetooth_name"
-                    android:background="#f5f5f5"
-                    android:drawableStart="@drawable/ic_email"
+                    android:background="@color/white"
+                    android:drawableStart="@drawable/ic_audio"
                     android:drawablePadding="6dp"
-                    android:hint="Bluetooth Name"
-                    android:inputType="textEmailAddress" />
+                    android:hint="Bluetooth name"/>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -108,18 +133,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/reg_username"
-                    android:background="#f5f5f5"
+                    android:background="@color/white"
                     android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="6dp"
                     android:hint="Username"
-                    android:inputType="textEmailAddress" />
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="20dp"
                 android:paddingStart="6dp"
                 android:paddingEnd="6dp"
                 app:passwordToggleEnabled="true">
@@ -128,9 +152,9 @@
                     android:layout_width="match_parent"
                     android:id="@+id/reg_password"
                     android:layout_height="wrap_content"
-                    android:background="#f5f5f5"
                     android:drawableStart="@drawable/ic_lock"
                     android:drawablePadding="6dp"
+                    android:background="@color/white"
                     android:hint="Password"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -150,5 +174,6 @@
         app:layout_constraintEnd_toEndOf="@+id/cardView2"
         app:layout_constraintStart_toStartOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
