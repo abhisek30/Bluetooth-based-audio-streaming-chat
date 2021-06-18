@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import co.kit.gfg.chatapp.data.PairedDeviceData
 import kotlinx.android.synthetic.main.device_info.*
 import java.util.ArrayList
 
@@ -26,15 +27,16 @@ class PairedDevicesFragment : Fragment() {
         val bluetoothAdapter=BluetoothAdapter.getDefaultAdapter()
         val pairedDevices: Set<BluetoothDevice>? = bluetoothAdapter.bondedDevices
         val paired_names = ArrayList<String>(pairedDevices!!.size)
-        val paired_address = ArrayList<String>(pairedDevices!!.size)
+        val paired_address = ArrayList<String>(pairedDevices.size)
         if (pairedDevices.isNotEmpty()) {
-            pairedDevices?.forEach { device ->
-                paired_names.add(device.name)
-                paired_address.add(device.address) // MAC address
+            pairedDevices.forEach { device ->
+                PairedDeviceData.deviceName.add(device.name)
+                PairedDeviceData.deviceAddress.add(device.address) // MAC address
             }
             Log.d("Hello","${paired_names.size}")
             recycler_paired_devices.layoutManager = LinearLayoutManager(context)
-            recycler_paired_devices.adapter =DeviceDataAdapter(paired_names, paired_address)
+            recycler_paired_devices.adapter =DeviceDataAdapter()
+            Log.d("Address",paired_address.toString())
 
         }
 
