@@ -7,13 +7,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import co.kit.gfg.chatapp.data.PairedDeviceData
 
 class DeviceDataAdapter(
-    val name: ArrayList<String>,
-    val address: ArrayList<String>
+//     name: ArrayList<String>
+//    val address: ArrayList<String>
 ): RecyclerView.Adapter<DeviceDataAdapter.dataViewholder>() {
 
-    class dataViewholder(itemView:View):RecyclerView.ViewHolder(itemView)
+//    var dName:ArrayList<String> =name
+
+    class dataViewholder(itemView:View):RecyclerView.ViewHolder(itemView){
+        var mTextView: TextView = itemView.findViewById(R.id.device_name)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):dataViewholder {
         val itemView=LayoutInflater.from(parent.context).inflate(R.layout.device_info,parent,false)
@@ -21,13 +26,13 @@ class DeviceDataAdapter(
     }
 
     override fun onBindViewHolder(holder: dataViewholder, position: Int) {
-        holder.itemView.findViewById<TextView>(R.id.device_name).text=name[position]
-        holder.itemView.findViewById<TextView>(R.id.device_address).text=address[position]
+        holder.mTextView.text=PairedDeviceData.deviceName[position]
+//        holder.itemView.findViewById<TextView>(R.id.device_address).text=address[position]
 
     }
 
     override fun getItemCount(): Int {
-        return name.size
+        return PairedDeviceData.deviceName.size
     }
 
 }
