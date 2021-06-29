@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.google.android.material.slider.Slider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.FirebaseFirestore;
+
 
 public class FeedbackFragment extends Fragment {
     // Declaring variables
