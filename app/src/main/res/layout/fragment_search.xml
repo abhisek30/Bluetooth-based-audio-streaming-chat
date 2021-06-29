@@ -9,11 +9,13 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleX="1.3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/background_search5" />
@@ -43,7 +45,8 @@
                 android:layout_marginLeft="10dp"
                 android:background="@null"
                 android:gravity="center"
-                android:text="  PAIRED"
+                android:text="PAIRED"
+                android:textSize="13sp"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,10 +103,11 @@
                 android:id="@+id/scanning_button1"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-
+                android:textSize="13sp"
                 android:layout_marginRight="10dp"
                 android:background="@null"
                 android:gravity="center"
+                android:paddingRight="10dp"
                 android:text="SCAN"
                 android:textColor="@color/black"
 
@@ -132,12 +136,14 @@
 <!--        app:layout_constraintVertical_bias="0.005" />-->
 
 
-        <FrameLayout
+        <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_devices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraint_layout_info" />
+        app:layout_constraintTop_toBottomOf="@id/constraint_layout_info"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

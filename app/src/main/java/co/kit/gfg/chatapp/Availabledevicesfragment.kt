@@ -5,17 +5,14 @@ import android.bluetooth.BluetoothDevice
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import co.kit.gfg.chatapp.data.PairedDeviceData
 
 
 class Availabledevicesfragment() : Fragment() {
@@ -34,18 +31,18 @@ class Availabledevicesfragment() : Fragment() {
         // Inflate the layout for this fragment
         val viewOfLayout =
             inflater.inflate(R.layout.fragment_availabledevicesfragment, container, false)
-         recycler_available_devices =
-            viewOfLayout.findViewById<RecyclerView>(R.id.recyler_available_devices)
+//         recycler_available_devices =
+//            viewOfLayout.findViewById<RecyclerView>(R.id.recyler_available_devices)
 
 //        scanList=viewOfLayout.findViewById<ListView>(R.id.deviceList)
-        bluetoothAdapter.startDiscovery()
-
-        val intentFilter = IntentFilter(BluetoothDevice.ACTION_FOUND)
-        requireContext().registerReceiver(myReceiver, intentFilter)
-
-        Log.d("Hello", "After myReceiver")
-
-        recycler_available_devices.layoutManager = LinearLayoutManager(requireContext())
+//        bluetoothAdapter.startDiscovery()
+//
+//        val intentFilter = IntentFilter(BluetoothDevice.ACTION_FOUND)
+//        requireContext().registerReceiver(myReceiver, intentFilter)
+//
+//        Log.d("Hello", "After myReceiver")
+//
+//        recycler_available_devices.layoutManager = LinearLayoutManager(requireContext())
 
 //        arrayAdapter=ArrayAdapter<String>(requireContext(),android.R.layout.simple_list_item_1,available_device_name)
 //        scanList.adapter(arrayAdapter)
@@ -65,7 +62,10 @@ class Availabledevicesfragment() : Fragment() {
 
 //        intentFilter.addAction(BluetoothDevice.ACTION_NAME_CHANGED)
 
+        Log.d("Paired Devices","${PairedDeviceData.device.size}")
 
+        var temp1 = BluetoothConnection()
+        temp1.ServerClass().start()
 
 
         return viewOfLayout
@@ -80,7 +80,10 @@ class Availabledevicesfragment() : Fragment() {
             if(BluetoothDevice.ACTION_FOUND == actions){
                 val devices= intent.getParcelableExtra<BluetoothDevice>(BluetoothDevice.EXTRA_DEVICE)
                 recycler_available_devices.adapter = deviceDataAdapter
-                devices?.let { available_device_name.add(it.name) }
+                devices?.let {
+                    available_device_name.add(it.name)
+                    available_device_address.add(it.address)
+                }
                 deviceDataAdapter.notifyDataSetChanged()
 
             }

@@ -3,6 +3,7 @@ package co.kit.gfg.chatapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 public class Splash extends AppCompatActivity {
@@ -24,7 +25,20 @@ public class Splash extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intent = new Intent(Splash.this, LoginActivity.class);
+
+
+                    boolean isLoggedIn= UserInfo.isLoggedIn(Splash.this);
+                    Intent intent;
+
+                    /*If user has already Logged in */
+                    if(isLoggedIn){
+                        intent = new Intent(Splash.this, MainActivity.class);
+
+                    }
+                    else {
+
+                        intent = new Intent(Splash.this, LoginActivity.class);
+                    }
                     startActivity(intent);
                     finish();
                 }

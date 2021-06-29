@@ -3,25 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="20dp"
+    android:paddingTop="20dp"
     android:background="@color/drawer">
-    <com.makeramen.roundedimageview.RoundedImageView
+
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/imageProfile"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/profile_pic"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+          app:lottie_rawRes="@raw/profile_animation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:riv_oval="true"/>
-    <View
-        android:id="@+id/viewSupporter"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageProfile"
-        app:layout_constraintEnd_toEndOf="@+id/imageProfile"
-        app:layout_constraintStart_toStartOf="@id/imageProfile"
-        app:layout_constraintTop_toTopOf="@id/imageProfile"/>
+        app:layout_constraintTop_toTopOf="parent"/>
+
 
     <TextView
         android:id="@+id/userName"
@@ -32,8 +26,9 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/viewSupporter"
-        app:layout_constraintStart_toEndOf="@id/imageProfile" />
+        app:layout_constraintTop_toTopOf="@id/imageProfile"
+        app:layout_constraintStart_toEndOf="@id/imageProfile"
+        app:layout_constraintBottom_toBottomOf="@id/imageProfile"/>
 
         
 
