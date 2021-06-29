@@ -1,20 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatFragment">
+    android:background="#262F40"
+    android:fadingEdge="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/chat_fragment"
-        android:textSize="20sp"
+
+    <FrameLayout
+        android:id="@+id/frame_chatView_chatItem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/linear_chatF_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_chatF_noMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:text="@string/send_your_first_message"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_chatFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#262F40"
+            android:visibility="visible"
+            tools:listitem="@layout/model_chat_item" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_chatF_layout"
+        android:layout_width="402dp"
+        android:layout_height="61dp"
+        android:background="@drawable/back_btn_dark_cp"
+        android:orientation="horizontal"
+        android:padding="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/frame_chatView_chatItem">
+
+        <EditText
+            android:id="@+id/edt_chatF_message"
+            android:layout_width="327dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_weight="10"
+            android:autofillHints="type your message"
+            android:background="@drawable/bg_message"
+            android:maxLines="10"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textDirection="rtl"
+            android:textSize="16sp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/ic_circular_image"
+            android:backgroundTint="@color/drawer">
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="15dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/send_icon"
+                android:text="@string/send"
+                app:iconTint="@color/white" />
+
+        </FrameLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
