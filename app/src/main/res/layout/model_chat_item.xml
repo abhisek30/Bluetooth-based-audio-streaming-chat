@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/chatItem_messageBoxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:minWidth="40dp"
+        android:background="@drawable/chat_message_guest">
+
+        <TextView
+            android:id="@+id/contentOf_chatItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202180"
+            android:maxEms="8"
+            android:padding="2dp"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/chatItem_messageSentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textSize="12sp"
+            android:layout_toEndOf="@+id/contentOf_chatItem"
+            android:layout_below="@id/contentOf_chatItem">
+
+        </TextView>
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chatItem_messageDelivery_status"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@+id/chatItem_messageSentTime"
+            android:layout_below="@+id/contentOf_chatItem"/>
+
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>
