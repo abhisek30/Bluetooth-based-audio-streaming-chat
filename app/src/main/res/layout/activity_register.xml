@@ -26,9 +26,9 @@
 
         android:text="Registration"
         android:textColor="@color/colorPrimary"
-        android:textSize="36sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toEndOf="@id/lottie_login_animation"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/view"/>

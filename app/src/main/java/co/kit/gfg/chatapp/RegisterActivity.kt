@@ -22,6 +22,7 @@ class RegisterActivity : AppCompatActivity() {
         reg_button.setOnClickListener{
             handler.insertUserData(reg_bluetooth_name.text.toString(),reg_username.text.toString(),reg_password.text.toString())
                 Toast.makeText(this,"Values Inserted", Toast.LENGTH_LONG).show()
+                onBackPressed()
 
         }
     }

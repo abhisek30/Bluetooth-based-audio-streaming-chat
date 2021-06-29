@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import co.kit.gfg.chatapp.data.UserInformation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +17,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
-
+    TextView user_profile_name;
+    TextView user_connection_status;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +63,22 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view=inflater.inflate(R.layout.fragment_profile, container, false);
+
+
+        //Setting the User Profile Username and BluetoothName
+        user_profile_name=view.findViewById(R.id.user_profile_name);
+
+
+
+        user_connection_status=view.findViewById(R.id.user_connection_status);
+
+        user_profile_name.setText(UserInfo.BluetoothName(requireContext()));
+        if(UserInformation.connectionStatus!=null)
+        user_connection_status.setText(UserInformation.connectionStatus);
+        else
+            user_connection_status.setText("NOT CONNECTED");
+        return view;
+
     }
 }
