@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    app:startDestination="@id/menuHome">
+    app:startDestination="@id/chatListFragment">
     <fragment
         android:id="@+id/menuHome"
         android:name="co.kit.gfg.chatapp.HomeFragment"
@@ -40,11 +40,6 @@
         android:label="@string/rate_us"
         tools:layout="@layout/fragment_rate_us" />
     <fragment
-        android:id="@+id/chatFragment"
-        android:name="co.kit.gfg.chatapp.ChatFragment"
-        android:label="Lets Chat"
-        tools:layout="@layout/fragment_chat2" />
-    <fragment
         android:id="@+id/audioFragment"
         android:name="co.kit.gfg.chatapp.AudioFragment"
         android:label="Listen Audio"
@@ -53,7 +48,11 @@
         android:id="@+id/searchFragment"
         android:name="co.kit.gfg.chatapp.SearchFragment"
         android:label="Search Connections"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
     <fragment
         android:id="@+id/streamFragment"
         android:name="co.kit.gfg.chatapp.StreamFragment"
@@ -64,4 +63,27 @@
         android:name="co.kit.gfg.chatapp.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="co.kit.gfg.chatapp.ChatListFragment"
+        android:label="fragment_chat_list"
+        tools:layout="@layout/fragment_chat_list" >
+        <action
+            android:id="@+id/action_chatListFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pairedDeviceFragment"
+        android:name="co.kit.gfg.chatapp.PairedDeviceFragment"
+        android:label="fragment_paired_device"
+        tools:layout="@layout/fragment_paired_device" >
+        <action
+            android:id="@+id/action_pairedDeviceFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="co.kit.gfg.chatapp.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
 </navigation>

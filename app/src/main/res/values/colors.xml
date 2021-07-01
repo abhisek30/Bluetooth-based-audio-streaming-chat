@@ -13,4 +13,5 @@
     <color name="toolbar">#FF2B59C3</color>
     <color name="drawer">#FF253C78</color>
     <color name="grey">#E6E6E6</color>
+    <color name="gray">#807E7E</color>
 </resources>

@@ -7,6 +7,6 @@ import java.util.*
 object PairedDeviceData {
     var deviceName = ArrayList<String>()
     var deviceAddress = ArrayList<String>()
-    var device=ArrayList<BluetoothDevice>()
+    var device = ArrayList<BluetoothDevice>()
 
 }
